@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ChevronDown, Search } from "lucide-react";
+import { Icon } from "./Icons";
 import {
   fetchWorkouts,
   searchWorkouts,
@@ -68,7 +68,8 @@ export default function Library() {
 
         <div className="flex flex-col gap-3 sm:flex-row">
           <label className="relative">
-            <Search
+            <Icon
+              name="Search"
               size={16}
               className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted"
             />
@@ -94,7 +95,8 @@ export default function Library() {
                 </option>
               ))}
             </select>
-            <ChevronDown
+            <Icon
+              name="ChevronDown"
               size={16}
               className="pointer-events-none absolute right-3 text-muted"
             />

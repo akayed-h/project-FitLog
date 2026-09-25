@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Bookmark, Plus } from "lucide-react";
+import { Icon } from "./Icons";
 import { fetchWorkout } from "@/lib/api";
 import { usePlan, PLAN_CAP } from "@/context/PlanContext";
 import { Spinner } from "./Library";
@@ -36,7 +36,7 @@ export default function WorkoutDetail({ id }) {
   return (
     <div className="py-8">
       <Link href="/" className="mb-6 inline-flex items-center gap-2 text-sm text-soft hover:text-white">
-        <ArrowLeft size={16} /> Back to library
+        <Icon name="ArrowLeft" size={16} /> Back to library
       </Link>
       <div className="grid gap-8 lg:grid-cols-2">
         <Thumb src={w.image} alt={w.name} className="aspect-square rounded-2xl border border-line lg:sticky lg:top-24 lg:self-start" />
@@ -74,14 +74,14 @@ export default function WorkoutDetail({ id }) {
               disabled={added || planFull}
               className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-bold text-black transition hover:brightness-90 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Plus size={18} />
+              <Icon name="Plus" size={18} />
               {added ? "In today's plan" : planFull ? `Plan full (${PLAN_CAP}/${PLAN_CAP})` : "Add to today's plan"}
             </button>
             <button
               onClick={() => saveForLater(w)}
               className="inline-flex items-center justify-center gap-2 rounded-md border border-soft px-6 py-3 text-sm font-bold text-white transition hover:border-accent hover:text-accent"
             >
-              <Bookmark size={18} /> Save for later
+              <Icon name="Bookmark" size={18} /> Save for later
             </button>
           </div>
         </div>

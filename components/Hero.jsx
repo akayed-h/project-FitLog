@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDown } from "lucide-react";
+import { Icon } from "./Icons";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
           href="#library"
           className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-bold uppercase text-black transition hover:brightness-90"
         >
-          Browse workouts <ArrowDown size={18} />
+          Browse workouts <Icon name="ArrowDown" size={18} />
         </a>
       </div>
       <div className="flex justify-center rounded-2xl border border-line bg-panel p-6">

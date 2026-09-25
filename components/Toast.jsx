@@ -1,5 +1,5 @@
 "use client";
-import { CheckCircle2, Info } from "lucide-react";
+import { Icon } from "./Icons";
 import { usePlan } from "@/context/PlanContext";
 
 export default function Toast() {
@@ -11,7 +11,7 @@ export default function Toast() {
           key={toast.id}
           className="flex items-center gap-2 rounded-lg border border-line bg-panel-2 px-4 py-3 text-sm font-medium shadow-xl"
         >
-          {toast.type === "warn" ? <Info size={18} className="text-amber-400" /> : <CheckCircle2 size={18} className="text-accent" />}
+          {toast.type === "warn" ? <Icon name="Info" size={18} className="text-amber-400" /> : <Icon name="CheckCircle2" size={18} className="text-accent" />}
           {toast.message}
         </div>
       )}

@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Check, ChevronDown, Search, X } from "lucide-react";
+import { Icon } from "./Icons";
 import { usePlan } from "@/context/PlanContext";
 import { searchWorkouts, sortWorkouts, SORT_OPTIONS } from "@/lib/api";
 import { Spinner } from "./Library";
@@ -53,7 +53,7 @@ export default function PlanView() {
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <label className="relative">
-            <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
+            <Icon name="Search" size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -67,7 +67,7 @@ export default function PlanView() {
             <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="appearance-none rounded-md border border-line bg-panel py-2 pl-3 pr-9 text-white">
               {SORT_OPTIONS.map((o) => <option key={o}>{o}</option>)}
             </select>
-            <ChevronDown size={16} className="pointer-events-none absolute right-3 text-muted" />
+            <Icon name="ChevronDown" size={16} className="pointer-events-none absolute right-3 text-muted" />
           </label>
         </div>
       </div>
@@ -102,7 +102,7 @@ export default function PlanView() {
                     disabled={w.done}
                     className="inline-flex items-center gap-1.5 rounded-md bg-accent px-4 py-2 text-sm font-bold text-black disabled:opacity-50"
                   >
-                    <Check size={16} /> {w.done ? "Done" : "Mark as Done"}
+                    <Icon name="Check" size={16} /> {w.done ? "Done" : "Mark as Done"}
                   </button>
                 ) : (
                   <button
@@ -118,7 +118,7 @@ export default function PlanView() {
                   aria-label={`Remove ${w.name}`}
                   className="rounded-md border border-line p-2 text-soft hover:border-red-400 hover:text-red-400"
                 >
-                  <X size={18} />
+                  <Icon name="X" size={18} />
                 </button>
               </div>
             </article>
